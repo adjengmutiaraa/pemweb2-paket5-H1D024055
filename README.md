@@ -143,9 +143,4 @@ resources/views/
 
 ## 🎥 Demo Video
 
-[Link YouTube — akan diisi setelah upload]
-
----
-
-*Dibuat oleh: [Nama Mahasiswa] — NIM: [NIM] — Paket 5*
-*Program Studi Informatika, Universitas Jenderal Soedirman*
+https://youtu.be/FpQaMpLoulg 
