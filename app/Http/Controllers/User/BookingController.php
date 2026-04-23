@@ -48,7 +48,7 @@ class BookingController extends Controller
 
         $hours = array_map('intval', $request->hours);
 
-        // ... (logic areSlotsContiguous & areSlotsAvailable tetap sama) ...
+        
 
         try {
             $booking = $this->bookingService->createBooking([
@@ -65,7 +65,14 @@ class BookingController extends Controller
             return back()->withErrors(['hours' => $e->getMessage()])->withInput();
         }
     }
-
+    public function areSlotsContiguous(array $hours): bool
+    {
+        sort($hours);
+        for ($i = 1; $i < count($hours); $i++) {
+            if ($hours[$i] - $hours[$i-1] !== 1) return false;
+        }
+        return true;
+    }
     public function show(Booking $booking)
     {
         abort_if($booking->user_id !== auth()->id(), 403);
